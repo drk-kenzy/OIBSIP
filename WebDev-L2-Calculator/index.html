@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculatrice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="calculator">
+    <div class="display">
+      <div class="display__previous" data-previous-operand></div>
+      <div class="display__current" data-current-operand>0</div>
+    </div>
+
+    <div class="keypad">
+      <button class="btn btn--action" data-clear>C</button>
+      <button class="btn btn--action" data-backspace>⌫</button>
+      <button class="btn btn--operator" data-operator="÷">÷</button>
+      <button class="btn btn--operator" data-operator="×">×</button>
+
+      <button class="btn" data-number>7</button>
+      <button class="btn" data-number>8</button>
+      <button class="btn" data-number>9</button>
+      <button class="btn btn--operator" data-operator="-">-</button>
+
+      <button class="btn" data-number>4</button>
+      <button class="btn" data-number>5</button>
+      <button class="btn" data-number>6</button>
+      <button class="btn btn--operator" data-operator="+">+</button>
+
+      <button class="btn" data-number>1</button>
+      <button class="btn" data-number>2</button>
+      <button class="btn" data-number>3</button>
+      <button class="btn btn--equals" data-equals rowspan="2">=</button>
+
+      <button class="btn btn--zero" data-number>0</button>
+      <button class="btn" data-number>.</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

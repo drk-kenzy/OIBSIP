@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mes tâches</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page">
+    <header class="app-header">
+      <h1 class="app-header__title">Mes tâches</h1>
+      <p class="app-header__subtitle">Organise ta journée, une tâche à la fois.</p>
+    </header>
+
+    <form class="add-form" data-add-form>
+      <input
+        type="text"
+        class="add-form__input"
+        data-task-input
+        placeholder="Qu'as-tu à faire ?"
+        autocomplete="off"
+        maxlength="200">
+      <button type="submit" class="add-form__button">Ajouter</button>
+    </form>
+
+    <main class="board">
+      <section class="column">
+        <h2 class="column__title">
+          En attente
+          <span class="column__count" data-pending-count>0</span>
+        </h2>
+        <ul class="task-list" data-pending-list></ul>
+        <p class="empty-state" data-pending-empty hidden>Aucune tâche en attente, profite-en !</p>
+      </section>
+
+      <section class="column">
+        <h2 class="column__title">
+          Terminées
+          <span class="column__count" data-done-count>0</span>
+        </h2>
+        <ul class="task-list" data-done-list></ul>
+        <p class="empty-state" data-done-empty hidden>Rien de terminé pour l'instant.</p>
+      </section>
+    </main>
+  </div>
+
+  <template data-task-template>
+    <li class="task">
+      <div class="task__main">
+        <button type="button" class="task__check" data-action="toggle" aria-label="Marquer comme terminée"></button>
+        <div class="task__body">
+          <p class="task__text" data-task-text></p>
+          <input type="text" class="task__edit-input" data-task-edit-input hidden maxlength="200">
+          <p class="task__timestamp" data-task-timestamp></p>
+        </div>
+      </div>
+      <div class="task__actions">
+        <button type="button" class="task__action" data-action="edit">Modifier</button>
+        <button type="button" class="task__action task__action--danger" data-action="delete">Supprimer</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+:root {
+  --color-text: #f4f5fb;
+  --color-text-muted: #9ea3c4;
+  --color-glass: rgba(255, 255, 255, 0.06);
+  --color-glass-border: rgba(255, 255, 255, 0.14);
+  --color-key: rgba(255, 255, 255, 0.07);
+  --color-key-hover: rgba(255, 255, 255, 0.14);
+  --color-action: rgba(255, 255, 255, 0.1);
+  --color-action-hover: rgba(255, 99, 99, 0.25);
+  --gradient-operator: linear-gradient(135deg, #6366f1, #8b5cf6);
+  --gradient-operator-hover: linear-gradient(135deg, #7c7ff5, #a476f8);
+  --gradient-equals: linear-gradient(135deg, #8b5cf6, #ec4899);
+  --gradient-equals-hover: linear-gradient(135deg, #9d6ff9, #f0579f);
+  --color-error: #ff6b6b;
+  --font-body: 'Segoe UI Variable', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  padding: 24px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(139, 92, 246, 0.35), transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(236, 72, 153, 0.25), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(99, 102, 241, 0.3), transparent 45%),
+    #0d0e1a;
+  background-attachment: fixed;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 340px;
+  background: var(--color-glass);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--color-glass-border);
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.display {
+  border-radius: 18px;
+  padding: 26px 20px 18px;
+  margin-bottom: 20px;
+  text-align: right;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.display__previous {
+  min-height: 22px;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  word-wrap: break-word;
+  letter-spacing: 0.02em;
+}
+
+.display__current {
+  font-size: 2.6rem;
+  font-weight: 600;
+  word-wrap: break-word;
+  letter-spacing: 0.01em;
+  background: linear-gradient(135deg, #ffffff, #c4c9f5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: opacity 0.12s ease;
+}
+
+.display__current.is-updating {
+  opacity: 0.55;
+}
+
+.display__current[data-error] {
+  color: var(--color-error);
+  -webkit-text-fill-color: var(--color-error);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 64px;
+  gap: 12px;
+}
+
+.btn {
+  border: none;
+  border-radius: 14px;
+  background: var(--color-key);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.08s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--color-key-hover);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.btn:active {
+  transform: scale(0.94);
+}
+
+.btn--operator {
+  background: var(--gradient-operator);
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+}
+
+.btn--operator:hover {
+  background: var(--gradient-operator-hover);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+}
+
+.btn--operator.is-active {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: -2px;
+}
+
+.btn--action {
+  background: var(--color-action);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.btn--action:hover {
+  background: var(--color-action-hover);
+  color: var(--color-text);
+}
+
+.btn--equals {
+  background: var(--gradient-equals);
+  font-weight: 700;
+  font-size: 1.6rem;
+  grid-row: span 2;
+  box-shadow: 0 10px 26px rgba(236, 72, 153, 0.4);
+}
+
+.btn--equals:hover {
+  background: var(--gradient-equals-hover);
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.55);
+}
+
+.btn--zero {
+  grid-column: span 2;
+}
+
+@media (max-width: 380px) {
+  .display__current {
+    font-size: 2rem;
+  }
+
+  .keypad {
+    grid-auto-rows: 56px;
+    gap: 9px;
+  }
+
+  .btn {
+    font-size: 1.05rem;
+  }
+}

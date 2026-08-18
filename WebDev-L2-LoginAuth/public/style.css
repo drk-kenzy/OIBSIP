@@ -1,0 +1,224 @@
+:root {
+  --color-bg-1: #0f172a;
+  --color-bg-2: #312e81;
+  --color-card: rgba(255, 255, 255, 0.97);
+  --color-text: #1e2233;
+  --color-text-muted: #6b7086;
+  --color-accent: #6366f1;
+  --color-accent-dark: #4f46e5;
+  --color-border: #e5e7f0;
+  --color-error-bg: #fef2f2;
+  --color-error-text: #b91c1c;
+  --color-success-bg: #f0fdf4;
+  --color-success-text: #15803d;
+  --font-body: 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.35), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3), transparent 45%),
+    var(--color-bg-1);
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-card);
+  border-radius: 20px;
+  padding: 40px 36px;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.35);
+}
+
+.auth-card--wide {
+  max-width: 560px;
+}
+
+.auth-card__title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.auth-card__subtitle {
+  color: var(--color-text-muted);
+  margin-top: 6px;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.auth-card__footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.auth-card__footer a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-card__footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Alerts ---------- */
+.alert {
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.alert--error {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+}
+
+.alert--success {
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+}
+
+/* ---------- Form ---------- */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+
+.auth-form__label:first-child {
+  margin-top: 0;
+}
+
+.auth-form__input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--color-text);
+}
+
+.auth-form__input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.auth-form__hint {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: 5px;
+}
+
+.auth-form__submit {
+  margin-top: 24px;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 10px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.08s ease;
+}
+
+.auth-form__submit:hover {
+  background: var(--color-accent-dark);
+}
+
+.auth-form__submit:active {
+  transform: scale(0.98);
+}
+
+.auth-form__submit--ghost {
+  margin-top: 0;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.auth-form__submit--ghost:hover {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+  border-color: transparent;
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.dashboard-info {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.dashboard-info__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+}
+
+.dashboard-info__row + .dashboard-info__row {
+  border-top: 1px solid var(--color-border);
+}
+
+.dashboard-info__label {
+  color: var(--color-text-muted);
+}
+
+.dashboard-info__value {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.dashboard-note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 30px 24px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+  }
+}
