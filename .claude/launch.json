@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "calculator",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8001", "--directory", "WebDev-L2-Calculator"],
+      "port": 8001
+    },
+    {
+      "name": "todoapp",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8002", "--directory", "WebDev-L2-TodoApp"],
+      "port": 8002
+    },
+    {
+      "name": "tributepage",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8003", "--directory", "WebDev-L2-TributePage"],
+      "port": 8003
+    },
+    {
+      "name": "loginauth",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d WebDev-L2-LoginAuth && node server.js"],
+      "port": 3000
+    }
+  ]
+}
