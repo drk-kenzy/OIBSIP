@@ -1,4 +1,4 @@
-# OIBSIP — Oasis Infobyte Web Development Internship
+# OIBSIP - Oasis Infobyte Web Development Internship
 
 Projets réalisés dans le cadre du **Oasis Infobyte Student Internship Program (OIBSIP)**, piste Développement Web (Niveaux 2 et 3).
 
@@ -9,7 +9,7 @@ Projets réalisés dans le cadre du **Oasis Infobyte Student Internship Program 
 | 1 | Calculatrice | L2 | HTML5 · CSS3 · JavaScript vanilla | [`WebDev-L2-Calculator`](./WebDev-L2-Calculator) |
 | 2 | Authentification (inscription / connexion) | L2 | Node.js · Express · bcrypt · express-session | [`WebDev-L2-LoginAuth`](./WebDev-L2-LoginAuth) |
 | 3 | Gestionnaire de tâches | L2 | HTML5 · CSS3 · JavaScript vanilla · localStorage | [`WebDev-L2-TodoApp`](./WebDev-L2-TodoApp) |
-| 4 | Page hommage — Ada Lovelace | L2 | HTML5 · CSS3 | [`WebDev-L2-TributePage`](./WebDev-L2-TributePage) |
+| 4 | Page hommage - Ada Lovelace | L2 | HTML5 · CSS3 | [`WebDev-L2-TributePage`](./WebDev-L2-TributePage) |
 | 5 | Livraison de pizzas (full-stack) | L3 | React (Vite) · Node.js/Express · MongoDB · Socket.IO · JWT | [`WebDev-L3-PizzaDelivery`](./WebDev-L3-PizzaDelivery) |
 
 Chaque dossier contient son propre `README.md` avec le détail des fonctionnalités, la stack complète et les instructions pour lancer le projet en local.
@@ -49,7 +49,7 @@ Todo list avec édition inline, persistance `localStorage` et mise en page adapt
   <img src="WebDev-L2-TodoApp/screenshots/todo-05-taches-terminees.png" width="200" alt="Todo - tâches terminées">
 </p>
 
-## 4. Page hommage — Ada Lovelace
+## 4. Page hommage - Ada Lovelace
 Page biographique dédiée à Ada Lovelace, sans JavaScript, entièrement responsive.
 
 <p>
@@ -74,4 +74,4 @@ Plateforme full-stack : création de pizza personnalisée, paiement (Razorpay te
 ---
 
 ## Auteur
-[drk-kenzy](https://github.com/drk-kenzy) — dans le cadre du stage **Oasis Infobyte** (piste Développement Web).
+[drk-kenzy](https://github.com/drk-kenzy) - dans le cadre du stage **Oasis Infobyte** (piste Développement Web).
